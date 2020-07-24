@@ -3,6 +3,7 @@ import { isNgTemplate } from '@angular/compiler';
 import { MessengerService } from 'src/app/services/messenger.service';
 import { Product } from 'src/app/models/product';
 import { DataService } from 'src/app/models/DataService';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,7 @@ export class CartComponent implements OnInit {
   cartItems = [];
 
   cartTotal = 0;
+  cartItemsCount = 0;
 
   constructor(private msg: MessengerService,private datasearch: DataService) { }
 
@@ -45,11 +47,14 @@ export class CartComponent implements OnInit {
       })
     }
   
+    this.cartItemsCount ++;
     this.cartTotal =0;
+    //this.cartItemsCount =0;
     this.cartItems.forEach(item => {
       this.cartTotal += (item.quantity * item.price);
-      this.datasearch.changeCartCount(item.quantity);
     })
+   
+    this.datasearch.changeCartCount(this.cartItemsCount);
   }
 
 }

@@ -1,11 +1,13 @@
-<div class="card filters">
+<div class="card filters" style="width: 160px;">
     <div class="card-header">
         <strong>Filters</strong>
     </div>
     <div class="card-body">
-        <div class="card">
-            <div class="card-header">
+        <div class="card" style="height: 180px; overflow-y: scroll;">
+            <div class="card-body">
                 <strong>Color</strong>
+                <br/>
+                <br/>
                   <label *ngFor="let item of colors; let i = index">
                     <input type="checkbox" [value]="item.value">
                     {{item.title}}
@@ -13,9 +15,11 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header">
+        <div class="card" style="height: 180px; overflow-y: scroll;">
+            <div class="card-body">
                 <strong>Brand</strong>
+                <br/>
+                <br/>
                   <label *ngFor="let item of brand; let i = index">
                     <input type="checkbox" name="checkBrand" [value]="item.value">
                     {{item.title}}
@@ -26,14 +30,40 @@
         <div class="card">
             <div class="card-body">
                 <strong>Price</strong>
-                <select class="form-control" name="minPrice">
+                <br/>
+                <br/>
+                <select name="minPrice">
                     <option *ngFor="let item of minprice" value="item.key">
-                       {{item.displayValue}}
+                       {{item.key}}
                     </option>
                 </select>
-                <select class="form-control" name="maxPrice">
+                <br/>
+                <br/>
+                <select name="maxPrice">
                     <option *ngFor="let item of maxprice" selected="Max" value="item.key">
-                       {{item.displayValue}}
+                       {{item.key}}
+                    </option>
+                </select>
+            
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <div class="card-body">
+                <strong>Discount</strong>
+                <br/>
+                <br/>
+                <select name="minPrice">
+                    <option *ngFor="let item of minDiscount" value="item.key">
+                       {{item.key}}
+                    </option>
+                </select>
+                <br/>
+                <br/>
+                <select name="maxPrice">
+                    <option *ngFor="let item of maxDiscount" selected="Max" value="item.key">
+                       {{item.key}}
                     </option>
                 </select>
             

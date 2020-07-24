@@ -17,6 +17,8 @@ export class FiltersComponent implements OnInit {
   brand: any = [];
   minprice: any= [];
   maxprice: any=[];
+  minDiscount: any=[];
+  maxDiscount: any=[];
 
   ngOnInit(): void {
     this.filterService.getFilterData().subscribe((item) => {
@@ -33,6 +35,10 @@ export class FiltersComponent implements OnInit {
         else if(this.filterList[x].type==='PRICE'){
           this.minprice = this.filterList[x].values;
           this.maxprice = this.filterList[x].values;
+
+          this.minDiscount = this.filterList[x].values;
+          this.maxDiscount = this.filterList[x].values;
+
         }
       }
     })

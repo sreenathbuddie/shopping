@@ -1,22 +1,28 @@
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-  
-      <!-- Login Form -->
-      <form>
-        <div class="alert alert-dismissible alert-danger" *ngIf="!msg">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Invalid Credentials!</strong>
-        </div>
-        <div class="form-group" [class.has-error]="loginControl.invalid">
-            <input type="text" class="form-control" name="login" placeholder="login" [(ngModel)]="username" #loginControl="ngModel" required>
-        </div>
-        <div class="form-group" [class.has-error]="passwordControl.invalid">
-            <input type="password" class="form-control" name="login" placeholder="password" [(ngModel)]="password" #passwordControl="ngModel" required>
-        </div>
-        
-        <button class="btn btn-primary button" (click)="validate()">Login</button>
-      </form>
-  
+<div class="container">
+  <div class="row">
+    <h3><i>sCart</i></h3>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+    
+        <!-- Login Form -->
+        <form>
+          <div class="alert alert-dismissible alert-danger" *ngIf="!msg">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>Invalid Credentials!</strong>
+          </div>
+          <div class="form-group" [class.has-error]="loginControl.invalid">
+              <input type="text" class="form-control" name="login" placeholder="login" [(ngModel)]="username" #loginControl="ngModel" required>
+          </div>
+          <div class="form-group" [class.has-error]="passwordControl.invalid">
+              <input type="password" class="form-control" name="login" placeholder="password" [(ngModel)]="password" #passwordControl="ngModel" required>
+          </div>
+          
+          <button class="btn btn-primary button" (click)="validate()">Login</button>
+        </form>
+    
+      </div>
     </div>
+  
   </div>
+</div>
   <!-- <router-outlet></router-outlet> -->
