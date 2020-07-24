@@ -1,0 +1,43 @@
+<div class="card filters">
+    <div class="card-header">
+        <strong>Filters</strong>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-header">
+                <strong>Color</strong>
+                  <label *ngFor="let item of colors; let i = index">
+                    <input type="checkbox" [value]="item.value">
+                    {{item.title}}
+                 </label>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <strong>Brand</strong>
+                  <label *ngFor="let item of brand; let i = index">
+                    <input type="checkbox" name="checkBrand" [value]="item.value">
+                    {{item.title}}
+                 </label>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <strong>Price</strong>
+                <select class="form-control" name="minPrice">
+                    <option *ngFor="let item of minprice" value="item.key">
+                       {{item.displayValue}}
+                    </option>
+                </select>
+                <select class="form-control" name="maxPrice">
+                    <option *ngFor="let item of maxprice" selected="Max" value="item.key">
+                       {{item.displayValue}}
+                    </option>
+                </select>
+            
+            </div>
+        </div>
+    </div>
+</div>
