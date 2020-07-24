@@ -1,6 +1,8 @@
 export class Product {
     id: string;
-    colour: string;
+    colour: {
+        title: string;
+    };
     brand: string;
     discount: number;
     rating : number;
